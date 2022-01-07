@@ -19,5 +19,5 @@
 ### install before
 ``` dotnet tool install --global dotnet-ef ``` 
 ### run migrations
-``` dotnet ef migrations add Initial ```
+``` dotnet ef migrations add "set name" ```
 ``` dotnet ef database update ```
