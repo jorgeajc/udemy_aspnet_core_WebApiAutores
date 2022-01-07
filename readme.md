@@ -1,5 +1,5 @@
 # open cmd
-## view all list of templates
+### view all list of templates
 ``` dotnet new --list ```
 
 
@@ -11,6 +11,13 @@
 
 # install entity framework core
 ```
-    dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0-preview.3.21201.2
-    dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.0-preview.3.21201.2
+    dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0
+    dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.0
 ```
+
+# migrations
+### install before
+``` dotnet tool install --global dotnet-ef ``` 
+### run migrations
+``` dotnet ef migrations add Initial ```
+``` dotnet ef database update ```
