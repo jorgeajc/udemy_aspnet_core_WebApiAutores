@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApiAutores.Entidades;
+using WebApiAutores.filters;
 using WebApiAutores.services;
 
 namespace WebApiAutores.Controllers {
@@ -27,6 +29,9 @@ namespace WebApiAutores.Controllers {
         }
 
         [HttpGet("GUID")]
+        // [ResponseCache(Duration = 10)]
+        // [Authorize]
+        [ServiceFilter(typeof(MyFilterAction))]
         public ActionResult ObtenerGuids() {
             return Ok(new {
                 AutoresControllerTrasient = serviceTrasient.Guid,

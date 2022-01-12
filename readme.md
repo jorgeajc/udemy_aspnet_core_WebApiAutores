@@ -13,6 +13,9 @@
 ```
     dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0
     dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.0
+
+    authentication jwt
+    dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
 ```
 
 # migrations
