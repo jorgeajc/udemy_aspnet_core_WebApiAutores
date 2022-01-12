@@ -1,0 +1,12 @@
+Proceso inicio
+Proceso finalizado
+Proceso inicio
+proceso en ejecución: 12/01/2022 01:07:02
+proceso en ejecución: 12/01/2022 01:07:07
+proceso en ejecución: 12/01/2022 01:07:12
+proceso en ejecución: 12/01/2022 01:07:17
+proceso en ejecución: 12/01/2022 01:07:22
+proceso en ejecución: 12/01/2022 01:07:27
+proceso en ejecución: 12/01/2022 01:07:32
+proceso en ejecución: 12/01/2022 01:07:37
+Proceso finalizado
