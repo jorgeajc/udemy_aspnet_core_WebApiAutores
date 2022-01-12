@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
+using WebApiAutores.services;
+
 namespace WebApiAutores {
     public class Startup {
         public Startup( IConfiguration configuration ) {
@@ -18,6 +20,14 @@ namespace WebApiAutores {
                     Configuration.GetConnectionString("defaultConnection")
                 )
             );
+
+            // inyección de dependencias
+            services.AddTransient<IService, ServiceA>();
+            services.AddTransient<ServiceTrasient>();
+            services.AddScoped<ServiceScoped>();
+            services.AddSingleton<ServiceSingleton>();
+            // services.AddScoped<ServiceA>(); // addscoped crea una instancia por solicitud
+            // services.AddSingleton<IService, ServiceA>(); // crear siempre diferentes instancias
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
