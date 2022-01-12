@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
+using WebApiAutores.Middleware;
 using WebApiAutores.services;
 
 namespace WebApiAutores {
@@ -34,7 +35,17 @@ namespace WebApiAutores {
             services.AddSwaggerGen();
         }
 
-        public void Configure( IApplicationBuilder app, IWebHostEnvironment env ) {
+        public void Configure( IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger ) {
+
+            // app.UseMiddleware<LoggerResponseMiddleware>();
+            app.UseLoggerResponseMiddleware();
+            
+            /* app.Map("ruta", app => {
+                 app.Run(async context => {
+                    await context.Response.WriteAsync("paré");
+                });
+            }); */
+           
             if (env.IsDevelopment()) {
                 app.UseSwagger();
                 app.UseSwaggerUI();

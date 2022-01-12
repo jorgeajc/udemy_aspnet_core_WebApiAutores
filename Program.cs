@@ -1,13 +1,19 @@
 using WebApiAutores;
 
-var builder = WebApplication.CreateBuilder(args);
+namespace WebAPIAutores
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
 
-var startup = new Startup( builder.Configuration );
-
-startup.ConfigureServices( builder.Services );
-
-var app = builder.Build();
-
-startup.Configure(app, app.Environment);
-
-app.Run();
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
+}
