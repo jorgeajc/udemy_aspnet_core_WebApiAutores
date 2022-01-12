@@ -2,8 +2,6 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using WebApiAutores.filters;
-using WebApiAutores.Middleware;
-using WebApiAutores.services;
 
 namespace WebApiAutores {
     public class Startup {
@@ -26,18 +24,6 @@ namespace WebApiAutores {
                 )
             );
 
-            // inyección de dependencias
-            services.AddTransient<IService, ServiceA>();
-            services.AddTransient<ServiceTrasient>();
-            services.AddScoped<ServiceScoped>();
-            services.AddSingleton<ServiceSingleton>();
-            // services.AddScoped<ServiceA>(); // addscoped crea una instancia por solicitud
-            // services.AddSingleton<IService, ServiceA>(); // crear siempre diferentes instancias
-
-            services.AddTransient<MyFilterAction>();
-
-            services.AddHostedService<writeToFile>();
-
             services.AddResponseCaching();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
@@ -48,17 +34,6 @@ namespace WebApiAutores {
         }
 
         public void Configure( IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger ) {
-            app.UseResponseCaching();
-
-            // app.UseMiddleware<LoggerResponseMiddleware>();
-            app.UseLoggerResponseMiddleware();
-
-            /* app.Map("ruta", app => {
-                 app.Run(async context => {
-                    await context.Response.WriteAsync("paré");
-                });
-            }); */
-           
             if (env.IsDevelopment()) {
                 app.UseSwagger();
                 app.UseSwaggerUI();

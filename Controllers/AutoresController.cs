@@ -1,9 +1,6 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApiAutores.Entidades;
-using WebApiAutores.filters;
-using WebApiAutores.services;
 
 namespace WebApiAutores.Controllers {
     [ApiController]
@@ -11,52 +8,16 @@ namespace WebApiAutores.Controllers {
     public class AutoresController: ControllerBase {
 
         public readonly ApplicationDbContext context;
-        public readonly IService service;
-        public readonly ServiceTrasient serviceTrasient;
-        public readonly ServiceScoped serviceScoped;
-        public readonly ServiceSingleton serviceSingleton;
-        private readonly ILogger<AutoresController> logger;
 
-        public AutoresController(ApplicationDbContext context, IService service, 
-            ServiceTrasient serviceTrasient, ServiceScoped serviceScoped, ServiceSingleton serviceSingleton, 
-            ILogger<AutoresController> logger) {
+        public AutoresController(ApplicationDbContext context) {
             this.context = context;
-            this.service = service;
-            this.serviceTrasient = serviceTrasient;
-            this.serviceScoped = serviceScoped;
-            this.serviceSingleton = serviceSingleton;
-            this.logger = logger;
-        }
-
-        [HttpGet("GUID")]
-        // [ResponseCache(Duration = 10)]
-        // [Authorize]
-        [ServiceFilter(typeof(MyFilterAction))]
-        public ActionResult ObtenerGuids() {
-            return Ok(new {
-                AutoresControllerTrasient = serviceTrasient.Guid,
-                ServiceA_Trasient = service.ObtenerTrasient(),
-
-                AutoresControllerScoped = serviceScoped.Guid,
-                ServiceA_Scoped = service.ObtenerScoped(),
-
-                AutoresControllerSingleton = serviceSingleton.Guid,
-                ServiceA_Singleton = service.ObtenerSingleton()
-            });
         }
 
         [HttpGet] // api/autores
-        [HttpGet("listado")] // api/autores/listado
-        [HttpGet("/listado")] // listado
         public async Task<ActionResult<List<Autor>>> Get() {
-            logger.LogInformation("listaado de autores");
-            return await context.Autores.Include(x => x.Libros).ToListAsync();
+            return await context.Autores.ToListAsync();
         }
-
-        [HttpGet("first")]
-        public async Task<ActionResult<Autor>> FirsAutor() {
-            return await context.Autores.FirstOrDefaultAsync();
-        } 
+        
         [HttpPost]
         public async Task<ActionResult> Post(Autor autor) {
 
@@ -78,17 +39,7 @@ namespace WebApiAutores.Controllers {
             }
             return autor;
         }
-
-        [HttpGet("{id:int}/{param2=default}")]
-        public async Task<ActionResult<Autor>> Get(int id, String param2) {
-            var autor = await context.Autores.FirstOrDefaultAsync(x => x.Id == id);
-            if( autor == null ) {
-                return NotFound();
-            }
-            return autor;
-        }
-
-
+ 
         [HttpGet("nombre")]
         public async Task<ActionResult<Autor>> Get(String nombre) {
             var autor = await context.Autores.FirstOrDefaultAsync(x => x.Nombre.Contains(nombre));
