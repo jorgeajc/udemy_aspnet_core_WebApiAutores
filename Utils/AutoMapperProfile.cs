@@ -1,5 +1,6 @@
 using AutoMapper;
 using WebApiAutores.DTOs.Autor;
+using WebApiAutores.DTOs.Libro;
 using WebApiAutores.Entities;
 
 namespace WebApiAutores.Utils {
@@ -7,6 +8,9 @@ namespace WebApiAutores.Utils {
         public AutoMapperProfile() {
             CreateMap<AutorCreationDTO, Autor>();
             CreateMap<Autor, AutorDTO>();
+            
+            CreateMap<LibroCreationDTO, Libro>();
+            CreateMap<Libro, LibroDTO>();
         }
     }
 }
