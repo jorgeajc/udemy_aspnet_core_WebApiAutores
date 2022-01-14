@@ -16,6 +16,9 @@
 
     authentication jwt
     dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+
+    automapper for mapping model dto
+    dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
 ```
 
 # migrations

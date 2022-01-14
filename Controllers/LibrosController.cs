@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using WebApiAutores.Entidades;
 
-namespace WebApiAutores.Controllers {
+namespace WebApiAutores.Controllers
+{
     [ApiController]
     [Route("api/libros")]
     public class LibrosController: ControllerBase {

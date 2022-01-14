@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Y7BmoqwCHhmz+sV5cWaSQ7GXtKdNzUFJIJyD0yGhHJ/BwB11PKhe13Zjle6D+I9SWxkMKbx2Nbbr/Pt78LG4BQ==",
+  "dgSpecHash": "C+OLXdAfecfCUJYQBR99NcI5RnFv405JKEUITl8B8eNfyjP0b6yy9w3Kxr8aj8dMBI2rosRQljit0P9EDBeB4g==",
   "success": true,
   "projectFilePath": "D:\\Desktop\\Personal Projects\\Udemy\\Curso_rest_ful_api_aspnet_core\\WebApiAutores\\WebApiAutores.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Maestro Mioga\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\Maestro Mioga\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\Maestro Mioga\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Maestro Mioga\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.1\\microsoft.aspnetcore.authentication.jwtbearer.6.0.1.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Maestro Mioga\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Maestro Mioga\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Maestro Mioga\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Maestro Mioga\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\microsoft.entityframeworkcore.6.0.0.nupkg.sha512",

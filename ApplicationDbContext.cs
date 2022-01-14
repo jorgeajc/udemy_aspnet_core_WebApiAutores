@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using WebApiAutores.Entidades;
+using WebApiAutores.Entities;
 
 namespace WebApiAutores {
     public class ApplicationDbContext : DbContext {

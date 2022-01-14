@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using WebApiAutores.validations;
 
-namespace WebApiAutores.Entidades {
+namespace WebApiAutores.Entities {
     public class Autor {
         public int Id { get; set; }
 
